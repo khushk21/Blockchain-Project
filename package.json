@@ -1,0 +1,20 @@
+{
+  "name": "blind-auction",
+  "version": "1.0.0",
+  "description": "Welcome to the repository of the DNS Blind Auction House.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.1.1",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "truffle-assertions": "^0.9.2"
+  }
+}
