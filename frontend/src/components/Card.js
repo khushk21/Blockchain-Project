@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 
+
 class Card_ extends Component {
+
   render() {
+    console.log(this.props.test_text)
     return (
       <>
         <div
@@ -22,6 +25,7 @@ class Card_ extends Component {
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
+
               </Card.Text>
               <Card.Link href="#">Card Link</Card.Link>
               <Card.Link href="#">Another Link</Card.Link>
