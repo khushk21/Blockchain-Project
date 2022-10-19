@@ -47,6 +47,7 @@ class SearchDomain_ extends Component {
     this.setState({
         lookedUpDomainName: event.target.value
     })
+    console.log(this.state.lookedUpDomainName)
 }
 
 handleDomainNameLookup = async () => {
@@ -64,7 +65,7 @@ this.setState({
     domainNameOwner: result.ownerAddress,
 })
 
-console.log(this.state.domainNameOwner)
+console.log("domain owner",this.state.domainNameOwner)
 
 
 }
@@ -85,13 +86,14 @@ console.log(this.state.domainNameOwner)
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
+                onChange={this.handleSearchedDomainName}
               />
-              <Button variant="outline-secondary" id="button-addon2" onClick={this.handleSearchedDomainName}>
+              <Button variant="outline-secondary" id="button-addon2" onClick={this.handleDomainNameLookup}>
                 Search
               </Button>
             </InputGroup>
           </div>
-          <Card test_text = "sometext" />
+          <Card props={{"domainOwner" : this.state.domainNameOwner}}/>
         </div>
       </>
     );

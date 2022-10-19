@@ -3,9 +3,14 @@ import Card from "react-bootstrap/Card";
 
 
 class Card_ extends Component {
-
+constructor(props){
+  super(props);
+  this.state = {
+    domainOwner : this.props.props.domainOwner
+  }
+}
   render() {
-    console.log(this.props.test_text)
+    {console.log("domain", this.state.domainOwner)}
     return (
       <>
         <div
@@ -18,9 +23,9 @@ class Card_ extends Component {
         >
           <Card style={{ width: "50rem" }}>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Domain Owner:</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
+              {this.props.props.domainOwner}
               </Card.Subtitle>
               <Card.Text>
                 Some quick example text to build on the card title and make up
