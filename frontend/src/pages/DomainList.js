@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import Card from "../components/Card";
 import {lookupAddress, getAddressList, getURL, getURLCount} from "../controller/dns_backend.js"
+
+import Card from "../components/SearchDomainCard"
 
 class DomainList_ extends Component {
   constructor(props){
@@ -120,18 +121,7 @@ handleOwnerLookup = async () => {
               </Button>
             </InputGroup>
           </div>
-          {/* <Card props={{"domainOwner" : this.state.domainsOwned.length === 0
-                                ? "Ready!"
-                                : this.state.domainsOwned[0] === 'Not Found'
-                                    ? this.state.searchedAddress + " does not own any domains."
-                                    : "Domains Owned: " + this.state.domainsOwned.join(", ")}}/> */}
-         <p>
-                            {this.state.domainsOwned.length === 0
-                                ? "Ready!"
-                                : this.state.domainsOwned[0] === 'Not Found'
-                                    ? this.state.searchedAddress + " does not own any domains."
-                                    : "Domains Owned: " + this.state.domainsOwned.join(", ")}
-                        </p>
+          <Card props={{"domainOwner": this.state.searchedAddress, "domainsOwned" : this.state.domainsOwned}}/>
         </div>
       </>
     );

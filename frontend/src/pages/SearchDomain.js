@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import Card from "../components/Card";
+import Card from "../components/SearchOwnerCard";
 import {lookupAddress} from "../controller/dns_backend.js"
 
 class SearchDomain_ extends Component {
@@ -47,7 +47,6 @@ class SearchDomain_ extends Component {
     this.setState({
         lookedUpDomainName: event.target.value
     })
-    console.log(this.state.lookedUpDomainName)
 }
 
 handleDomainNameLookup = async () => {
@@ -65,7 +64,6 @@ this.setState({
     domainNameOwner: result.ownerAddress,
 })
 
-console.log("domain owner",this.state.domainNameOwner)
 
 
 }
@@ -83,7 +81,7 @@ console.log("domain owner",this.state.domainNameOwner)
           >
             <InputGroup className="col-8">
               <FormControl
-                placeholder="Search"
+                placeholder="Enter a valid Domain Name"
                 aria-label="Search"
                 aria-describedby="basic-addon2"
                 onChange={this.handleSearchedDomainName}
@@ -93,7 +91,7 @@ console.log("domain owner",this.state.domainNameOwner)
               </Button>
             </InputGroup>
           </div>
-          <Card props={{"domainOwner" : this.state.domainNameOwner}}/>
+          <Card props={{"domainOwner" : this.state.domainNameOwner, "searchedAddress": this.state.searchedDomainName}}/>
         </div>
       </>
     );

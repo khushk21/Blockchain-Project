@@ -6,11 +6,11 @@ class Card_ extends Component {
 constructor(props){
   super(props);
   this.state = {
-    domainOwner : this.props.props.domainOwner
+    domainOwner : this.props.props.domainOwner,
+    searchedAddress: this.props.props.searchedAddress
   }
 }
   render() {
-    {console.log("domain", this.state.domainOwner)}
     return (
       <>
         <div
@@ -23,17 +23,15 @@ constructor(props){
         >
           <Card style={{ width: "50rem" }}>
             <Card.Body>
-              <Card.Title>Domain Owner:</Card.Title>
+              <Card.Title>Domain Name:</Card.Title>
+              <Card.Subtitle>{this.props.props.searchedAddress}</Card.Subtitle>
+              {this.props.props.searchedAddress? <div><Card.Title>Domain Owner</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
-              {this.props.props.domainOwner}
-              </Card.Subtitle>
+              {this.props.props.domainOwner === "0x0000000000000000000000000000000000000000"? "This Domain is not owned by any account": this.props.props.domainOwner}
+              </Card.Subtitle></div> : null}
+              
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-
               </Card.Text>
-              <Card.Link href="#">Card Link</Card.Link>
-              <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
           </Card>
         </div>
