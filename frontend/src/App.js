@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import SearchDomain from "./pages/SearchDomain";
 import PayDomain from "./pages/PayDomain";
 import DomainList from "./pages/DomainList";
+import DomainBidding from "./pages/DomainBidding";
+import DomainStatus from "./pages/DomainStatus";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           height: '100vh'
           }}>
           <Route exact path="/" component={Home} />
+          <Route exact path='/domain/status' component={DomainStatus}/>
+          <Route exact path='/domain_bidding' component={DomainBidding}/>
           <Route exact path="/search_domain" component={SearchDomain} />
           <Route exact path="/pay_domain" component={PayDomain} />
           <Route exact path="/domain_list" component={DomainList} />

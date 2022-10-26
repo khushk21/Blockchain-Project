@@ -1,4 +1,3 @@
-import { useState, useRef, useEffect } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
 import Web3 from "web3";
 import artifact from "../backend/build/contracts/Dns.json";
