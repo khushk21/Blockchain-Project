@@ -119,11 +119,9 @@ class DomainStatus_ extends React.Component {
         const cardStyle = {
             fontFamily: "arial",
             width: "80%",
-            margin: "16px auto",
-            border: "1px solid #eee",
-            boxShadow: "0 2px 3px #ccc",
-            padding: "15px",
+            margin: "auto",
             textAlign: "center",
+            color: "white"
         };
 
         let status = (<div style={cardStyle}>
@@ -154,7 +152,7 @@ class DomainStatus_ extends React.Component {
         return (
             <>
                 <div style={cardStyle}>
-                    <h1 >The Auction House</h1>
+                    <h1> BrokenChain Auction House</h1>
                     <Button variant="outline-secondary" id="button-addon2" onClick={this.handleBack}>
                         Back to Domain Bidding
                     </Button>

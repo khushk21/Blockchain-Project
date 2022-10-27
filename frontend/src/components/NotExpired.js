@@ -1,4 +1,6 @@
 import React from "react";
+import Card from "react-bootstrap/Card";
+
 
 import {
     getExpired
@@ -27,21 +29,21 @@ class NotExpired extends React.Component {
 
     render() {
 
-        const cardStyle = {
-            fontFamily: "arial",
-            width: "80%",
-            margin: "16px auto",
-            border: "1px solid #eee",
-            boxShadow: "0 2px 3px #ccc",
-            padding: "15px",
-            textAlign: "center",
-        };
-
         return (
-            <div style={cardStyle}>
-                <h1 >{this.props.domainName} has not yet expired</h1>
-                <p style={{ width: "45%", margin: "auto", fontSize: "18px", marginBottom: "20px" }} >
-                    Unfortunately, this domain name is still currently owned by someone in the Ethereum Network, and has not yet expired. Thus, the domain name is not available for auction.
+
+            <>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "20vh",
+          }}
+        >
+          <Card style={{ width: "50rem" }}>
+            <Card.Body>
+                <Card.Title>{this.props.domainName} has not yet expired</Card.Title>
+                <Card.Subtitle> Unfortunately, this domain name is still currently owned by someone in the Ethereum Network, and has not yet expired. Thus, the domain name is not available for auction.
                     <br /><br />
                     Please check back again next time!
 
@@ -52,11 +54,12 @@ class NotExpired extends React.Component {
                             ? `Domain has expired! Please refresh the page.`
                             : this.state.expiryEndTime > 60
                                 ? `${Math.floor(this.state.expiryEndTime / 60)} min ${this.state.expiryEndTime - (Math.floor(this.state.expiryEndTime / 60)) * 60} sec`
-                                : `${this.state.expiryEndTime} sec`}
-                </p>
-
-            </div>
-        );
+                                : `${this.state.expiryEndTime} sec`}</Card.Subtitle>
+            </Card.Body>
+          </Card>
+        </div>
+      </>
+);
     }
 }
 
