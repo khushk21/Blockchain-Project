@@ -4,52 +4,52 @@ import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
 class DomainBidding_ extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-            // States for Sending ETH to a Domain
-            domainName: "",
-        };
+      // States for Sending ETH to a Domain
+      domainName: "",
+    };
   }
 
- // Handler to Save Domain Name 
-    handleDomainName = event => {
+  // Handler to Save Domain Name
+  handleDomainName = (event) => {
     this.setState({
-        domainName: event.target.value
-    })
-}
+      domainName: event.target.value,
+    });
+  };
 
-    checkDomainStatus = () => {
+  checkDomainStatus = () => {
     // Error Handling for Domain Names
     if (this.state.domainName === "") {
-        window.alert("Please input a domain name!");
-    } else if (!this.state.domainName.includes('.')) {
-        window.alert("Please input a valid domain name!");
+      window.alert("Please input a domain name!");
+    } else if (!this.state.domainName.includes(".ntu")) {
+      window.alert("Please input a valid domain name!");
     } else {
-        // Routing and Passing of Domain Params into Auction
-        const queryString = "domainName=" + encodeURIComponent(this.state.domainName);
+      // Routing and Passing of Domain Params into Auction
+      const queryString =
+        "domainName=" + encodeURIComponent(this.state.domainName);
 
-        this.props.history.push({
-            pathname: '/domain/status',
-            search: '?' + queryString
-        });
+      this.props.history.push({
+        pathname: "/domain/status",
+        search: "?" + queryString,
+      });
     }
-}
-handleBack = () => {
+  };
+  handleBack = () => {
     this.props.history.goBack();
-}
+  };
 
-componentDidMount() {
+  componentDidMount() {
     const query = new URLSearchParams(this.props.location.search);
-    let queryDomainName = ''
+    let queryDomainName = "";
     for (let param of query.entries()) {
-        queryDomainName = param[1];
+      queryDomainName = param[1];
     }
     this.setState({
-        domainName: queryDomainName
-    })
-
-}
+      domainName: queryDomainName,
+    });
+  }
 
   render() {
     return (
@@ -70,7 +70,11 @@ componentDidMount() {
                 aria-describedby="basic-addon2"
                 onChange={this.handleDomainName}
               />
-              <Button variant="outline-secondary" id="button-addon2" onClick={this.checkDomainStatus}>
+              <Button
+                variant="outline-secondary"
+                id="button-addon2"
+                onClick={this.checkDomainStatus}
+              >
                 Check Status
               </Button>
             </InputGroup>
