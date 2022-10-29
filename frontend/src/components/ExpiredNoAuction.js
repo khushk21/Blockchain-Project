@@ -1,6 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { startAuction } from "../controller/dns_backend.js";
+import { Button } from "react-bootstrap";
+import DomainBiddingButton from "./DomainBiddingButton.js";
 
 class ExpiredNoAuction extends React.Component {
   constructor(props) {
@@ -40,69 +42,66 @@ class ExpiredNoAuction extends React.Component {
 
     if (!this.state.clicked) {
       button = (
-        <input
+        <Button
           style={{ margin: "5px" }}
-          type="submit"
-          value="Start Auction"
           onClick={this.handleStartAuction}
-        />
+          variant="outline-secondary"
+          id="button-addon2"
+        >
+          Start Auction
+        </Button>
       );
     } else {
       button = (
-        <input
+        <Button
           style={{ margin: "5px" }}
-          type="submit"
-          value="Starting Auction..."
           onClick={this.showAlert}
-        />
+          variant="outline-secondary"
+          id="button-addon2"
+        >
+          Starting Auction...
+        </Button>
       );
     }
 
     return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "20vh",
-        }}
-      >
-        <Card style={{ width: "50rem" }}>
-          <Card.Body>
-            <Card.Title>
-              {this.props.domainName} is available for Auction!
-            </Card.Title>
-            <Card.Subtitle>
-              {" "}
-              <b>Great news!</b>
-              <br />
-              <br />
-              This domain name is currently not owned by anyone in the Ethereum
-              Network, and is thus available for auction.
-              <br />
-              <br />
-              Click below to start an auction for this domain name.
-              <br />
-              <br />
-            </Card.Subtitle>
-          </Card.Body>
-        </Card>
-        {button}
-      </div>
-
-      // <div style={cardStyle}>
-
-      //     <h1 >{this.props.domainName} is available for Auction!</h1>
-      //     <p style={{ width: "60%", margin: "auto", fontSize: "18px", marginBottom: "20px" }} >
-      //         <b>Great news!</b><br /><br />This domain name is currently not owned by anyone in the Ethereum Network, and is thus available for auction.
-      //         <br /><br />
-      //         Click below to start an auction for this domain name.
-      //     </p>
-      //     <br />
-      //     <br />
-      //     {button}
-
-      // </div>
+      <>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "20vh",
+          }}
+        >
+          <Card style={{ width: "25%", margin: "auto", textAlign: "center" }}>
+            <Card.Body>
+              <Card.Title>
+                {this.props.domainName} is available for Auction!
+              </Card.Title>
+              <Card.Subtitle>
+                {" "}
+                <b>Great news!</b>
+                <br />
+                <br />
+                This domain name is currently not owned by anyone in the
+                Ethereum Network, and is thus available for auction.
+                <br />
+                <br />
+                Click below to start an auction for this domain name.
+                <br />
+                <br />
+              </Card.Subtitle>
+            </Card.Body>
+          </Card>
+          <br />
+        </div>
+        <br />
+        <div style={{ width: "80%", margin: "auto", textAlign: "center" }}>
+          {button}
+          <DomainBiddingButton />
+        </div>
+      </>
     );
   }
 }

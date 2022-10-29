@@ -7,6 +7,7 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { bid, biddingEnd } from "../controller/auction_helpers.js";
+import DomainBiddingButton from "./DomainBiddingButton.js";
 
 class BiddingStage extends React.Component {
   constructor(props) {
@@ -183,54 +184,66 @@ class BiddingStage extends React.Component {
               </Card>
             </Col>
             <div>
-              <p
-                style={{
-                  width: "100%",
-                  margin: "auto",
-                  fontSize: "18px",
-                  marginBottom: "20px",
-                }}
-              >
-                This auction is currently in the <b>Bidding Stage</b> and is
-                still accepting bids!
-                <br />
-                <br />
-                Submit a bid below to participate in this auction.
-              </p>
+              <Card style={{ width: "90%" }}>
+                <Card.Body>
+                  <Card.Text>
+                    <p
+                      style={{
+                        width: "100%",
+                        margin: "auto",
+                        fontSize: "18px",
+                      }}
+                    >
+                      This auction is currently in the <b>Bidding Stage</b> and
+                      is still accepting bids!
+                      <br />
+                      Submit a bid below to participate in this auction.
+                    </p>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
               <br />
-              <InputGroup className="col-8">
-                <FormControl
-                  placeholder="Enter Deposit in ETH"
-                  aria-label="eth_deposit"
-                  aria-describedby="basic-addon2"
-                  onChange={this.handleBidSend}
-                />
-                <FormControl
-                  placeholder="Enter Desired Bid Value"
-                  aria-label="hash_value"
-                  aria-describedby="basic-addon2"
-                  onChange={this.handleBid}
-                />
-                <FormControl
-                  placeholder="Is this bid real? Write 'True' if real, and 'False' if fake."
-                  aria-label="bid_type"
-                  aria-describedby="basic-addon2"
-                  onChange={this.handleReal}
-                />
-                <FormControl
-                  placeholder="Enter your secret password"
-                  aria-label="secret"
-                  aria-describedby="basic-addon2"
-                  onChange={this.handleSecret}
-                />
-                <Button
-                  variant="outline-secondary"
-                  id="button-addon2"
-                  onClick={this.handlePlaceBid}
-                >
-                  Place Bid
-                </Button>
-              </InputGroup>
+
+              <FormControl
+                placeholder="Enter Deposit in ETH"
+                aria-label="eth_deposit"
+                aria-describedby="basic-addon2"
+                onChange={this.handleBidSend}
+                style={{ width: "90%" }}
+              />
+              <br />
+              <FormControl
+                placeholder="Enter Desired Bid Value"
+                aria-label="hash_value"
+                aria-describedby="basic-addon2"
+                onChange={this.handleBid}
+                style={{ width: "90%" }}
+              />
+              <br />
+              <FormControl
+                placeholder="Is this bid real? Write 'True' if real, and 'False' if fake."
+                aria-label="bid_type"
+                aria-describedby="basic-addon2"
+                onChange={this.handleReal}
+                style={{ width: "90%" }}
+              />
+              <br />
+              <FormControl
+                placeholder="Enter your secret password"
+                aria-label="secret"
+                aria-describedby="basic-addon2"
+                onChange={this.handleSecret}
+                style={{ width: "90%" }}
+              />
+              <br />
+              <Button
+                variant="outline-secondary"
+                id="button-addon2"
+                onClick={this.handlePlaceBid}
+              >
+                Place Bid
+              </Button>
+              <DomainBiddingButton />
             </div>
           </Row>
         </CardGroup>

@@ -8,6 +8,9 @@ import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import DomainBiddingButton from "./DomainBiddingButton.js";
+import Button from "react-bootstrap/Button";
+
 class EndStage extends React.Component {
   constructor(props) {
     super(props);
@@ -56,22 +59,20 @@ class EndStage extends React.Component {
     };
 
     let button = (
-      <input
-        style={{ margin: "5px" }}
-        type="submit"
-        value="End Auction"
+      <Button
+        variant="outline-secondary"
+        id="button-addon2"
         onClick={this.endAuction}
-      />
+      >
+        End Auction
+      </Button>
     );
 
     if (this.state.clicked) {
       button = (
-        <input
-          style={{ margin: "5px" }}
-          type="submit"
-          value="Ending Auction..."
-          onClick={null}
-        />
+        <Button variant="outline-secondary" id="button-addon2" onClick={null}>
+          Ending Auction...
+        </Button>
       );
     }
 
@@ -103,60 +104,61 @@ class EndStage extends React.Component {
       <div>
         <CardGroup>
           <Row xs={1} md={2} className="g-4">
-            <Col>
+            {/* <Col> */}
+            <Card>
+              <Card.Body>
+                <Card.Title>How does the End Phase work?</Card.Title>
+                <Card.Text>
+                  The <b>End Phase</b> is where we can officially end an ongoing
+                  auction. Auctions must end before winners can{" "}
+                  <b>claim ownership</b> to their desired domains, and before{" "}
+                  <b>refunds will be made</b> to users that did not win the
+                  auction. If an auction has no bidders, the user that started
+                  the auction will automatically be the winner the auction.
+                  <br />
+                  <b>Thank you for taking part in the DNS Blind Auction!</b>
+                  <br />
+                  Find out more about how the <b>End Phase</b> works and why it
+                  is necessary{" "}
+                  <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#233-end-phase">
+                    over here
+                  </a>
+                  !
+                </Card.Text>
+              </Card.Body>
+            </Card>
+
+            <div>
               <Card>
                 <Card.Body>
-                  <Card.Title>How does the End Phase work?</Card.Title>
                   <Card.Text>
-                    The <b>End Phase</b> is where we can officially end an
-                    ongoing auction.
-                    <br />
-                    <br />
-                    Auctions must end before winners can <b>
-                      claim ownership
-                    </b>{" "}
-                    to their desired domains, and before{" "}
-                    <b>refunds will be made</b> to users that did not win the
-                    auction.
-                    <br />
-                    <br />
-                    If an auction has no bidders, the user that started the
-                    auction will automatically be the winner the auction.
-                    <br />
-                    <b>Thank you for taking part in the DNS Blind Auction!</b>
-                    <br />
-                    Find out more about how the <b>End Phase</b> works and why
-                    it is necessary{" "}
-                    <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#233-end-phase">
-                      over here
-                    </a>
-                    !
+                    <p
+                      style={{
+                        margin: "auto",
+                        fontSize: "18px",
+                      }}
+                    >
+                      This auction is currently in the <b>End Stage</b>, as both
+                      its Bidding and Reveal Stages have already concluded.
+                      <br />
+                      <br />
+                      {winningText}
+                      <br />
+                      <br />
+                      {endAuctionText}
+                    </p>
                   </Card.Text>
                 </Card.Body>
               </Card>
-            </Col>
+            </div>
+            {/* </Col> */}
           </Row>
         </CardGroup>
-        <div>
-          <p
-            style={{
-              width: "60%",
-              margin: "auto",
-              fontSize: "18px",
-              marginBottom: "20px",
-            }}
-          >
-            This auction is currently in the <b>End Stage</b>, as both its
-            Bidding and Reveal Stages have already concluded.
-            <br />
-            <br />
-            {winningText}
-            <br />
-            <br />
-            {endAuctionText}
-          </p>
-          <br />
+        <br />
+        <div style={{ width: "80%", margin: "auto", textAlign: "center" }}>
+          {" "}
           {button}
+          <DomainBiddingButton />
         </div>
       </div>
     );

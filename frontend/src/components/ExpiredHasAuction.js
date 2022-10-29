@@ -6,6 +6,8 @@ import { biddingEnd, revealEnd } from "../controller/auction_helpers.js";
 import BiddingStage from "../components/BiddingStage.js";
 import RevealStage from "../components/RevealStage";
 import EndStage from "../components/EndStage";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 class ExpiredHasAuction extends React.Component {
   constructor(props) {
@@ -70,32 +72,34 @@ class ExpiredHasAuction extends React.Component {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "20vh",
         }}
       >
-        <Card style={{ width: "50rem" }}>
-          <Card.Body>
-            <Card.Title>
-              {this.props.domainName} has an existing ongoing auction!
-              <br />
-            </Card.Title>
-            <Card.Subtitle>
-              {" "}
-              {this.state.stage === 0
-                ? "Loading Auction Stage..."
-                : this.state.stage === 1
-                ? "Bidding Phase"
-                : this.state.stage === 2
-                ? "Reveal Phase"
-                : this.state.stage === 3
-                ? "End Phase"
-                : ""}
-              <br />
-              <br />
-            </Card.Subtitle>
-          </Card.Body>
-        </Card>
-        {stage}
+        <Col>
+          <Card style={{ width: "25%", margin: "auto", textAlign: "center" }}>
+            <Card.Body>
+              <Card.Title>
+                {this.props.domainName} has an existing ongoing auction!
+                <br />
+              </Card.Title>
+              <Card.Subtitle>
+                {" "}
+                {this.state.stage === 0
+                  ? "Loading Auction Stage..."
+                  : this.state.stage === 1
+                  ? "Bidding Phase"
+                  : this.state.stage === 2
+                  ? "Reveal Phase"
+                  : this.state.stage === 3
+                  ? "End Phase"
+                  : ""}
+                <br />
+                <br />
+              </Card.Subtitle>
+            </Card.Body>
+          </Card>
+          <br /> <br />
+          <Row>{stage}</Row>
+        </Col>
       </div>
     );
   }
