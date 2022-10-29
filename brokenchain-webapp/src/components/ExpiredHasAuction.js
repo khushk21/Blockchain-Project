@@ -3,9 +3,9 @@ import Card from "react-bootstrap/Card";
 
 import { biddingEnd, revealEnd } from "../controller/auction_helpers.js";
 
-import BiddingStage from "../components/BiddingStage.js";
-import RevealStage from "../components/RevealStage";
-import EndStage from "../components/EndStage";
+import BiddingStage from "./BiddingStage.js";
+import RevealStage from "./RevealStage";
+import EndStage from "./EndStage";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
