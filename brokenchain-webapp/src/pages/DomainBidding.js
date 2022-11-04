@@ -71,7 +71,7 @@ class DomainBidding_ extends Component {
                 onChange={this.handleDomainName}
               />
               <Button
-                variant="outline-secondary"
+                variant="secondary"
                 id="button-addon2"
                 onClick={this.checkDomainStatus}
               >

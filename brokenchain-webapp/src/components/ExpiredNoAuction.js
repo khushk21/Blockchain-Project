@@ -45,7 +45,7 @@ class ExpiredNoAuction extends React.Component {
         <Button
           style={{ margin: "5px" }}
           onClick={this.handleStartAuction}
-          variant="outline-secondary"
+          variant="secondary"
           id="button-addon2"
         >
           Start Auction
@@ -56,7 +56,7 @@ class ExpiredNoAuction extends React.Component {
         <Button
           style={{ margin: "5px" }}
           onClick={this.showAlert}
-          variant="outline-secondary"
+          variant="secondary"
           id="button-addon2"
         >
           Starting Auction...

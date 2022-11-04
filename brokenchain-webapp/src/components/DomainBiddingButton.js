@@ -3,32 +3,28 @@ import { Button } from "react-bootstrap";
 
 class DomainBiddingButton_ extends React.Component {
   handleBack = () => {
-    this.props.router.push("/domain_bidding");
+    this.props.history.push("/domain_bidding");
   };
 
   handleDoubleBack = () => {
-    this.props.router.push("/");
+    this.props.history.push("/");
   };
   render() {
     return (
       <div>
         <br />
-        <Button
-          variant="outline-secondary"
-          id="button-addon2"
-          onClick={this.handleBack}
-        >
-          Back to Domain Bidding
-        </Button>
+        <a href="/domain_bidding">
+          <Button variant="secondary" id="button-addon2">
+            Back to Domain Bidding
+          </Button>
+        </a>
         <br />
         <br />
-        <Button
-          variant="outline-secondary"
-          id="button-addon2"
-          onClick={this.handleDoubleBack}
-        >
-          Back to Home
-        </Button>
+        <a href="/">
+          <Button variant="secondary" id="button-addon2">
+            Back to Home
+          </Button>
+        </a>
       </div>
     );
   }

@@ -239,7 +239,7 @@ class BiddingStage extends React.Component {
               />
               <br />
               <Button
-                variant="outline-secondary"
+                variant="secondary"
                 id="button-addon2"
                 onClick={this.handlePlaceBid}
               >

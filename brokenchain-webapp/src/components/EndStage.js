@@ -59,18 +59,14 @@ class EndStage extends React.Component {
     };
 
     let button = (
-      <Button
-        variant="outline-secondary"
-        id="button-addon2"
-        onClick={this.endAuction}
-      >
+      <Button variant="secondary" id="button-addon2" onClick={this.endAuction}>
         End Auction
       </Button>
     );
 
     if (this.state.clicked) {
       button = (
-        <Button variant="outline-secondary" id="button-addon2" onClick={null}>
+        <Button variant="secondary" id="button-addon2" onClick={null}>
           Ending Auction...
         </Button>
       );
