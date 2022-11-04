@@ -41,9 +41,9 @@ class NotExpired extends React.Component {
               </Card.Title>
               <Card.Subtitle>
                 {" "}
-                Unfortunately, this domain name is still currently owned by
-                someone in the Ethereum Network, and has not yet expired. Thus,
-                the domain name is not available for auction.
+                Unfortunately, this domain name has not yet expired and is still
+                being used by someone in the Ethereum Network. As a result, the
+                domain name is not up for sale.
                 <br />
                 <br />
                 Please check back again next time!

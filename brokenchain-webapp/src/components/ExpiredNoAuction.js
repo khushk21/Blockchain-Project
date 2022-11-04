@@ -84,8 +84,8 @@ class ExpiredNoAuction extends React.Component {
                 <b>Great news!</b>
                 <br />
                 <br />
-                This domain name is currently not owned by anyone in the
-                Ethereum Network, and is thus available for auction.
+                This domain name is presently up for auction because no one in
+                the Ethereum Network currently owns it.
                 <br />
                 <br />
                 Click below to start an auction for this domain name.

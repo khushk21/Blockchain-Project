@@ -141,9 +141,9 @@ class RevealStage extends React.Component {
                     How to participate in the Reveal Phase?
                   </Card.Title>
                   <Card.Text>
-                    The Reveal Phase allows a bidder to reveal all their bids
-                    for a particular domain name, and prove that they were the
-                    ones who made those bids during the Bidding Phase.
+                    Unfortunately, this domain name has not yet expired and is
+                    still being used by someone in the Ethereum Network. As a
+                    result, the domain name is not up for sale.
                     <br />
                     Unlike the Bidding Phase, the Reveal Phase only takes place
                     once per bidder, and is executing for <b>ALL</b> bids made
@@ -162,15 +162,14 @@ class RevealStage extends React.Component {
                     Here are the steps to reveal all your bids:
                   </Card.Title>
                   <Card.Text>
-                    1. Input in all your <b>bids</b> in{" "}
+                    1. Enter all your <b>bids</b> in <b>chronological order</b>,
+                    separating them each with a <b>comma ',' </b> .
+                    <br />
+                    2. Enter all your <b>'true/false'</b> real booleans in{" "}
                     <b>chronological order</b>, separating them each with a{" "}
                     <b>comma ',' </b> .
                     <br />
-                    2. Input in all your <b>'true/false'</b> real booleans in{" "}
-                    <b>chronological order</b>, separating them each with a{" "}
-                    <b>comma ',' </b> .
-                    <br />
-                    3. Input in all your <b>secrets</b> in{" "}
+                    3. Enter all your <b>secrets</b> in{" "}
                     <b>chronological order</b>, separating them each with a{" "}
                     <b>comma ',' </b> .
                     <br />
@@ -178,14 +177,15 @@ class RevealStage extends React.Component {
                     <br />
                     <b>Important:</b>
                     <br />
-                    Each bidder can only reveal once! If a bidder attempts to
-                    reveal all their bids a second time, the contract call will
-                    not go through, and Metamask will return an contract revert
-                    error.
+                    There can only be one revelation per bidder! In the event
+                    that a bidder makes a second effort to reveal all of their
+                    offers, the contract call will fail and Metamask will
+                    provide a contract revert error.
                     <br />
-                    Please input all your values in chronological order,
-                    separated by commas. This is to ensure that the contract
-                    will correctly read and verify your bids.
+                    Please enter all of your values between commas and in
+                    chronological sequence. This is to guarantee that your
+                    proposals will be accurately interpreted and verified by the
+                    contract.
                     <br />
                     <b>Example of Inputs:</b>
                     <br />
@@ -219,8 +219,8 @@ class RevealStage extends React.Component {
                         fontSize: "18px",
                       }}
                     >
-                      Reveal your bid below to be eligible to either win the
-                      auction or have your bids refunded due to a loss.
+                      To be eligible to win the auction or have your bids
+                      reimbursed if you lose, please reveal your bid below.
                     </p>
                   </Card.Text>
                 </Card.Body>

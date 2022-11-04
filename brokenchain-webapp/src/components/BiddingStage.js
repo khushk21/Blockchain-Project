@@ -130,10 +130,10 @@ class BiddingStage extends React.Component {
                     How to participate in the bidding phase?
                   </Card.Title>
                   <Card.Text>
-                    The Bidding Phase allows a bidder (you!) to place bids for a
-                    particular domain name. While the Bidding Phase is ongoing,
-                    each user can place multiple bids of their choice, as "bid"
-                    inputs.
+                    A bidder (you!) has the opportunity to submit an offer
+                    during the bidding round for a certain domain name. Each
+                    user may submit a number of bids of their choosing as "bid"
+                    inputs at any time during the Bidding Phase.
                     <br />
                     <br />
                     Each bid takes in 4 values: <br />
@@ -147,32 +147,34 @@ class BiddingStage extends React.Component {
                 <Card.Body>
                   <Card.Title> Here are the steps to start a bid:</Card.Title>
                   <Card.Text>
-                    1. Input in a <b>deposit</b> amount of your choice. Note
-                    that your desired bid amount does not need to correspond
-                    with your deposit amount. However, each individual bid value
-                    must be at least equal or greater than the sum of all your
-                    deposits.
+                    1. Enter the amount you want to use as your <b>deposit</b>.
+                    Note that it is not necessary for your desired bid amount to
+                    match with the sum of your deposit. However, the value of
+                    each individual bid must be more than or equal to the total
+                    of all your deposits.
                     <br />
-                    2. Input your desired <b>bid</b>.
+                    2. Enter a value for your desired <b>bid</b>.
                     <br />
                     3. Indicate whether this bid is real or not by writing{" "}
                     <b>'true'</b> or <b>'false'</b>. This way, you may input
                     fake bids to mask your actual bid so that you can top up the
                     ether deposits for your real bids.
                     <br />
-                    4. Input a <b>secret password</b> value. The purpose of this
-                    secret is to authenticate that you are the one who made the
-                    bid. You must remember this secret, as it will be used in
-                    the reveal stage later to prove your identity for your bids.
+                    4. Enter a value for the <b>secret password</b>. The
+                    objective of this the key is to prove that you are the one
+                    who made the purchase bid. This information must be kept in
+                    mind because it will be used in the subsequent disclosure
+                    step to validate your identity for bidding.
                     <br />
-                    And you're done! All the above values will be hashed, and
-                    this hash will be sent to the Blind Auction Ethereum Smart
-                    Contract as inputs into the auction.
+                    You're done now! All of the aforementioned values will be
+                    hashed, and the resulting hash will be provided to the
+                    Ethereum Smart Contract for the Blind Auction as inputs for
+                    the auction.
                     <br />
-                    <b>Important:</b> Please remember all your (bid, real,
-                    secret) inputs in chronological order, as you will need
-                    these values in the reveal stage later. Failure to properly
-                    safe-keep these values will result in you losing your bid.
+                    <b>Important:</b> You will need these values in the reveal
+                    stage, so please keep track of all your (bid, real, secret)
+                    inputs in the order they were entered. You will lose your
+                    bid if these values are not properly stored.
                     <br /> Find out more about how the <b>Bidding Phase</b>{" "}
                     works and why it is necessary{" "}
                     <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#231-bidding-phase">

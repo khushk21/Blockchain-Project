@@ -109,12 +109,12 @@ class EndStage extends React.Component {
               <Card.Body>
                 <Card.Title>How does the End Phase work?</Card.Title>
                 <Card.Text>
-                  The <b>End Phase</b> is where we can officially end an ongoing
-                  auction. Auctions must end before winners can{" "}
-                  <b>claim ownership</b> to their desired domains, and before{" "}
-                  <b>refunds will be made</b> to users that did not win the
-                  auction. If an auction has no bidders, the user that started
-                  the auction will automatically be the winner the auction.
+                  The final stage of an auction is known as the "End Phase."
+                  Prior to winners being able to <b>claim ownership</b> of the
+                  domains they wish to own and prior to users who did not win
+                  the auction receiving refunds, auctions must come to a
+                  conclusion. The person who initiated the auction will be
+                  declared the winner if there are no other bidders.
                   <br />
                   <b>Thank you for taking part in the DNS Blind Auction!</b>
                   <br />
@@ -138,8 +138,9 @@ class EndStage extends React.Component {
                         fontSize: "18px",
                       }}
                     >
-                      This auction is currently in the <b>End Stage</b>, as both
-                      its Bidding and Reveal Stages have already concluded.
+                      Since the Bidding Stage and the Reveal Stage of this
+                      auction have already ended, it is presently in the{" "}
+                      <b>End Stage</b>.
                       <br />
                       <br />
                       {winningText}

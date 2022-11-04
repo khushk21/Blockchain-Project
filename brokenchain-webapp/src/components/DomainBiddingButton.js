@@ -3,12 +3,11 @@ import { Button } from "react-bootstrap";
 
 class DomainBiddingButton_ extends React.Component {
   handleBack = () => {
-    this.props.history.goBack();
+    this.props.router.push("/domain_bidding");
   };
 
   handleDoubleBack = () => {
-    this.props.history.goBack();
-    this.props.history.goBack();
+    this.props.router.push("/");
   };
   render() {
     return (
