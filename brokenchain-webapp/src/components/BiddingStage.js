@@ -150,8 +150,10 @@ class BiddingStage extends React.Component {
                     1. Enter the amount you want to use as your <b>deposit</b>.
                     Note that it is not necessary for your desired bid amount to
                     match with the sum of your deposit. However, the value of
-                    each individual bid must be more than or equal to the total
-                    of all your deposits.
+                    each individual bid must be less than the ETH deposit for
+                    that bid and if you are submitting multiple bids then sum of
+                    all your ETH deposits should be grater than the sum of all
+                    your true bid values.
                     <br />
                     2. Enter a value for your desired <b>bid</b>.
                     <br />
@@ -177,7 +179,7 @@ class BiddingStage extends React.Component {
                     bid if these values are not properly stored.
                     <br /> Find out more about how the <b>Bidding Phase</b>{" "}
                     works and why it is necessary{" "}
-                    <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#231-bidding-phase">
+                    <a href="https://github.com/khushk21/Blockchain-Project/blob/main/README.md#231-bidding-phase">
                       over here
                     </a>
                     !

@@ -200,7 +200,7 @@ class RevealStage extends React.Component {
                     <br />
                     Find out more about how the <b>Reveal Phase</b> works and
                     why it is necessary{" "}
-                    <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#232-reveal-phase">
+                    <a href="https://github.com/khushk21/Blockchain-Project/blob/main/README.md#232-reveal-phase">
                       over here
                     </a>
                     !
