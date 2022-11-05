@@ -1,10 +1,10 @@
 # CZ4153 Blockchain Technology: DNS Blind Auction House
 
-Welcome to the repository of the DNS Blind Auction House.
+Welcome to the DNS Blind Auction House's repository.
 
-This project is a collaboration between **Shen Chen**, **Sim Zhi Qi**, and **Vincent Wong**, and implements a Decentralized Domain Registrar that allows users on the Ethereum Blockchain Network to bid for unregistered domain names of their choice.
+**Khush Kothari**, **Akshat Sharma**, and **Aditya Chandrasekhar** worked together on this project, which implements a decentralized domain registrar that enables users of the Ethereum Blockchain Network to bid for unregistered domain names of their choice.
 
-The Decentralized Domain Registrar, titled **'DNS Blind Auction House'**, allows users to bid for domain names using the 'commit-and-reveal' blind auction bidding process to interact with the blockchain, supporting features such as listing of registered domains, query the actual Ethereum public address (owner) behind the domain, bid for an unregistered domain, and many more features.
+The **DNS Blind Auction House**, a Decentralized Domain Registrar, supports features like listing of registered domains, querying the actual Ethereum public address (owner) behind the domain, bidding for an unregistered domain, and many more. Users can bid for domain names using the "commit-and-reveal" blind auction bidding process to interact with the blockchain.
 
 ## Contents
 
@@ -52,7 +52,7 @@ truffle version # To check if Truffle has been installed successfully
 To use the DNS Blind Auction House, you will first need to clone the repository to your local computer. You may do so in your own desired local directory with the following command
 
 ```bash
-git clone https://github.com/zhiqisim/Blind-Auction.git
+git clone git@github.com:khushk21/Blockchain-Project.git
 ```
 
 We will be utilising the `Migrations.sol`, `Dns.sol` and `BlindAuction.sol` Solidity files for our smart contracts.
@@ -91,7 +91,7 @@ truffle migrate --network local --reset
 
 During the migration, take note of the contract address obtained after deploying the Dns Solidity contract.
 
-Navigate into the `./webapp/configurations.js` file. Make the following 2 changes:
+Navigate into the `./webapp/src/controller/configurations.js` file. Make the following 2 changes:
 
 1. Change the address in the constant `DnsContractAddressGanache` to the value highlighted in the image above.
 2. Change the `ENVIRONMENT` constant to `'Ganache'`.
@@ -145,26 +145,26 @@ The web application has **5 different sections**:
 
 ### 1. The Auction House
 
-The Auction House is the entry point for users to enter to check if a domain name has already been taken up. There are three cases:
+Users enter through The Auction House to see if a domain name has already been registered. These three situations are:
 
-- A domain has **already been taken**, and **has not expired yet**. Users will not be able to bid for this domain name, until its current ownership expires.
-- A domain's ownership has **already expired** or is **not currently owned by anyone**, and has **no existing on-going auctions**. Here, the user can choose to start a new auction, which will call the `startAuction()` function in our [DNS Smart Contract](#DNSContract).
-- A domain is **not currently owned by anyone**, but already **has an ongoing auction** pegged to it. Here, the ongoing auction will be in one of three different phases:
-  - **Bidding Phase:** Where users can bid in a Blind Auction. More information can be found in the [Bidding Phase](#BiddingPhase) section.
-  - **Reveal Phase:** Where users reveal and prove that they were the ones who made their bids in the Bidding Phase. More information can be found in the [Reveal Phase](#RevealPhase) section.
-  - **End Phase:** Where users choose to end an ongoing auction, giving the winner of the auction ownership to the domain, and refunding the losers with their bids. More information can be found in the [End Phase](#EndPhase) section.
+- A domain name has already been registered but hasn't yet expired. Users won't be able to place bids until the current owner of this domain name expires.
+- There are no active auctions and the domain's ownership has previously expired or is not currently held by anyone. Here, the user has the option to launch a new auction, which will activate our [DNS Smart Contract](#DNSContract"startAuction()" )'s method.
+- Although a domain is now up for auction, it is not currently owned by anyone. In this case, the current auction will be in one of three stages:
+- The **Bidding Phase**, during which customers can place blind auction bids. The [Bidding Phase](#BiddingPhase) section has further details.
+- The **Reveal Phase** is where users identify themselves and demonstrate that their bids during the "Bidding Phase" were indeed their own. The [Reveal Phase](#RevealPhase) section has more details.
+- **End Phase:** When users decide to conclude an ongoing auction, the domain is awarded to the successful bidder, and the losing bidders are given their money back. The [End Phase] section (#EndPhase) contains more details.
 
 <a name="ListRegisteredDomains"></a>
 
 ### 2. List of Registered Domains
 
-At the bottom of the webpage is where we can see a list of Ethereum Public address, and their owned registered domain name URLs. These domain names were obtained from the [DNS Smart Contract](#DNSContract), through a series of function calls as follows:
+A list of Ethereum Public addresses and their registered domain name URLs may be found at the bottom of the page. Through a series of function calls, the following domain names were acquired from the [DNS Smart Contract](#DNSContract):
 
-- `getAddress()`: To get a complete list of all Ethereum public addresses that currently own domain name URLs.
-- `getURLCount(ethAddress)`: To get the number of URLs owned by a particular Ethereum public address.
-- `getURL(ethAddress, i)`: To get the ith domain name URL owned by a particular Ethereum public address.
+- "getAddress()": To obtain a comprehensive list of all Ethereum public addresses that at the time of writing currently own domain name URLs.
+- "getURLCount(ethAddress)": Retrieves the total number of URLs a specific Ethereum public address owns.
+- "getURL(ethAddress, I Retrieves the URL for the ith domain name that belongs to a specific Ethereum public address.
 
-All these function calls generate a mapping of Ethereum Public addresses to domain name URLs, which are then both stored and rendered from the `data` state of the web page.
+All of these function calls result in the conversion of Ethereum Public addresses into domain name URLs, which are then both stored and rendered from the web page's "data" state.
 
 <a name="OwnerOfDomain"></a>
 
@@ -233,13 +233,13 @@ We should see **31 test cases successfully passing**, with tests raging from uni
 
 #### 1.3 Reasoning
 
-Storing the forwards and backwards resolution of (address -> URLs) and (URL -> address) enables quick and simple lookup at expense of state variable updates when new URLs are added. This is an intentional trade-off made, as lookup queries should outnumber registrations by many orders of magnitude.
+At the price of state variable updates when new URLs are added, storing the forwards and backwards resolution of (address -> URLs) and (URL -> address) provides rapid and easy lookup. This is a deliberate trade-off because search requests ought to vastly exceed registrations.
 
-Auctions are deployed as required, with the auction calling the relevant callbacks to register the winner as the URL owner once ended. A check is done to ensure accounts/contracts calling the register URL function matches the internal records of the auction address associated with said URL.
+After necessary, auctions are deployed, and when they are finished, the auction calls the appropriate callbacks to register the winner as the URL owner. The accounts/contracts calling the register URL function are checked to see if they match the internal records of the auction address linked to that URL.
 
-Many of the auction-related state variables like the bidding and reveal time are public to enforce transparency in the bidding process. In addition, there are a few helper state variables (e.g. address_not_unique mapping) to reduce the need for computation (looping through an array to check if it already exists), reducing run time in exchange for slightly increased storage space.
+To ensure openness in the bidding process, many auction-related state variables, such as the bidding and reveal time, are made public. The necessity for computation (looping through an array to see whether something already exists) can be reduced by using a few helper state variables, such as the address not unique mapping, which increases storage space somewhat but reduces run time.
 
-Lastly, a grace period is built in to ensure that users are unable to deny a URL registration by starting an auction but not ending it.
+Last but not least, a grace period is included to make sure that users cannot refuse a URL registration by starting an auction but not finishing it.
 
 <a name="BlindAuction"></a>
 
@@ -288,7 +288,7 @@ _Note that the Bid Value, Real Boolean, and Secret Values will all be hashed and
 
 ##### 2.3.2 Reveal Phase
 
-The **Reveal Phase** allows the user to reveal all the bids they made during the Bidding Phase. Users have to reveal every single bid they made, **including** the fake ones, to verify and ensure they cannot selectively reveal certain bids. Users also only have 1 try to reveal their bids. Any subsequently reveals or wrong reveals will invalidate their bids. This is to ensure that no user can selectively reveal their bids, which would have resulted in an unfair auction that isn't truly blind, since the user would only reveal their lowest bid, selectively revealling the higher bids when they realised that they are losing the auction. This security flaw is thus prevented by only allowing the user to reveal **once**.
+The user can disclose every offer they made during the bidding phase during the **Reveal Phase**. To ensure that users cannot selectively divulge particular bids, they must reveal every single bid they made, **including** the fraudulent ones. Additionally, users can only reveal their bids once. Their bids will be void if any revelations are made later or are incorrect. This prevents users from selectively disclosing their bids, which may lead to an unfair auction that isn't truly blind because the user would only reveal their lowest price, selectively disclosing the higher bids when they realized they were losing the auction. Thus, by only enabling the user to divulge **once**, this security problem is avoided.
 
 Using the aforementioned user in the Bidding Phase above as an example of what to input during the Reveal Phase:
 
@@ -302,6 +302,6 @@ _Note that values MUST be inputted in the order that they were bidded in (ie. th
 
 ##### 2.3.3 End Phase
 
-The **End Phase** is where the user would end the auction. Once the auction has ended, the winner of the bid will have the domain name registered to their Ethereum public address and ownership transfered to them, while users that did not win the auction will be refunded the amount they bidded, as long as they successfully participated in the Reveal Phase.
+The user would end the auction during the **End Phase**. The domain name will be registered to the winning bidder's Ethereum public address after the auction is over, and ownership will be transferred to them. Users who placed a bid but did not place it will receive a refund of their bid, provided they completed the Reveal Phase successfully.
 
 _Note that we retrieve our timings to bound our functions based on the now() function in solidity, which takes the current block timestamp as our "now" time. This is how we determine when the auction Bidding Phase should end and transition to the Reveal Phase, and likewise for the Reveal Phase to transition to the End Phase._
