@@ -116,7 +116,7 @@ class EndStage extends React.Component {
                   <br />
                   Find out more about how the <b>End Phase</b> works and why it
                   is necessary{" "}
-                  <a href="https://github.com/zhiqisim/Blind-Auction/blob/master/README.md#233-end-phase">
+                  <a href="https://github.com/khushk21/Blockchain-Project/blob/main/README.md#233-end-phase">
                     over here
                   </a>
                   !
