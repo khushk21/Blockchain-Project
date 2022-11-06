@@ -93,7 +93,7 @@ During the migration, take note of the contract address obtained after deploying
 
 Navigate into the `./webapp/src/controller/configurations.js` file. Make the following 2 changes:
 
-1. Change the address in the constant `DnsContractAddressGanache` to the value highlighted in the image above.
+1. Change the address in the constant `DnsContractAddressGanache` to the value displayed after contract address field.
 2. Change the `ENVIRONMENT` constant to `'Ganache'`.
 
 <a name="GanacheToMetamask"></a>
