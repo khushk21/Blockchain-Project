@@ -276,11 +276,11 @@ For example, a user might want to bid a bid value of 1 ETH for their domain name
 The user can choose to make 2 separate bids to mask their bid.
 
 - **First Bid**:
-  - **Deposit** = 0.1 ETH, **Bid Value** = 1 ETH, **Real Boolean** = True (indicating that this bid is real), **Secret** = secretvalue
+  - **Deposit** = 0.1 ETH, **Bid Value** = 5 ETH, **Real Boolean** = True (indicating that this bid is real), **Secret** = secretpswd
 - **Second Bid**:
-  - **Deposit** = 10 ETH, **Bid Value** = 20 ETH, **Real Boolean** = False (indicating that this bid is false, and is only used to mislead other auction viewers, and also used to deposit more eth into their bidding account), **Secret** = secretvalue2
+  - **Deposit** = 10 ETH, **Bid Value** = 10 ETH, **Real Boolean** = False (indicating that this bid is false, and is only used to mislead other auction viewers, and also used to deposit more eth into their bidding account), **Secret** = secretpswd2
 
-Here, the bidder's bid will successfully go through, as their total deposit of **0.1 + 10 = 10.1 ETH** is larger than their actual (true) bid of **1 ETH**. This means that the bidder would have bidded **1 ETH**, though the publicly available ETH values are **0.1 ETH** and **10 ETH** respectively in each bid transaction.
+Here, the bidder's bid will successfully go through, as their total deposit of **0.1 + 10 = 10.1 ETH** is larger than their actual (true) bid of **5 ETH**. This means that the bidder would have bidded **5 ETH**, though the publicly available ETH values are **0.1 ETH** and **10 ETH** respectively in each bid transaction.
 
 _Note that the Bid Value, Real Boolean, and Secret Values will all be hashed and sent as data to the Blind Auction Smart Contract._
 
@@ -292,11 +292,11 @@ The user can disclose every offer they made during the bidding phase during the 
 
 Using the aforementioned user in the Bidding Phase above as an example of what to input during the Reveal Phase:
 
-- **Bid Values**: 1, 20
+- **Bid Values**: 5, 10
 - **Real Booleans**: True, False
-- **Secret Values**: secretvalue, secretvalue2
+- **Secret Values**: secretpswd, secretpswd2
 
-_Note that values MUST be inputted in the order that they were bidded in (ie. the bid value order should be 1, 20 instead of 20, 1)_
+_Note that values MUST be inputted in the order that they were bidded in (ie. the bid value order should be 5, 10 instead of 10, 5)_
 
 <a name="EndPhase"></a>
 
