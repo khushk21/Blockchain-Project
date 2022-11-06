@@ -152,7 +152,7 @@ Users enter through The Auction House to see if a domain name has already been r
 - Although a domain is now up for auction, it is not currently owned by anyone. In this case, the current auction will be in one of three stages:
 - The **Bidding Phase**, during which customers can place blind auction bids. The [Bidding Phase](#BiddingPhase) section has further details.
 - The **Reveal Phase** is where users identify themselves and demonstrate that their bids during the "Bidding Phase" were indeed their own. The [Reveal Phase](#RevealPhase) section has more details.
-- **End Phase:** When users decide to conclude an ongoing auction, the domain is awarded to the successful bidder, and the losing bidders are given their money back. The [End Phase] section (#EndPhase) contains more details.
+- **End Phase:** When users decide to conclude an ongoing auction, the domain is awarded to the successful bidder, and the losing bidders are given their money back. The [End Phase](#EndPhase) section contains more details.
 
 <a name="ListRegisteredDomains"></a>
 
