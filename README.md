@@ -136,7 +136,7 @@ Once done, we are finally ready to navigate around the Front End Website!
 
 After entering `localhost:1234`, we will see the web application page.
 
-![Home](./assets/home.png)
+![Home](./assets/Screenshot 2022-11-04 at 4.46.57 PM.png)
 ![Auction](./assets/auction.png)
 
 The web application has **5 different sections**:
